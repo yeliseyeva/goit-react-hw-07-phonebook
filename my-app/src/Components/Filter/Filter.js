@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import contactActions from "../../redux/contacts-actions";
+// import contactActions from "../../redux/contacts-actions";
 import { getFilter } from "../../redux/selectors";
+import { changeFilter } from "../../redux/contacts-actions";
 
 function Filter() {
   const value = useSelector(getFilter);
@@ -12,7 +13,7 @@ function Filter() {
       type="text"
       placeholder="Find contacts by name"
       value={value}
-      onChange={(e) => dispatch(contactActions.changeFilter(e.target.value))}
+      onChange={(e) => dispatch(changeFilter(e.target.value))}
       name="name"
       required
       autoComplete="off"
